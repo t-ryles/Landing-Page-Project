@@ -1,7 +1,7 @@
 # Landing-Page-Project
 /*
 Udacity Landing Page project
-Practice working with Vanilla JavaScript, CSS< and HTML
+Practice working with Vanilla JavaScript, CSS, and HTML
 
 INDEX.HTML
 -basic content of page
