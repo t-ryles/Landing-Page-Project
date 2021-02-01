@@ -234,3 +234,50 @@ section.your-active-class .landing__container::after {
 		           rotate(-360deg);
 	}
 }
+
+/*Responsize Breakpoints*/
+
+@media (max-width: 940px) {
+    .page__header {
+        font-size: .75em;
+    }
+}
+
+@media (max-width: 885px) {
+    .page__header li {
+    }
+}
+
+@media (max-width: 815px) {
+    .page__header {
+        font-size: .6em;
+    }
+}
+
+@media (max-width: 707px) {
+    .page__header {
+        font-size: .5em;
+    }
+}
+
+@media (max-width: 630px) {
+    .page__header {
+        font-size: .4em;
+    }
+
+    h1 .main_hero {
+        font-size: 5em;
+    }
+    h1 {
+        font-size: 5em;
+        margin: 1em 2rem;
+    }
+
+    section p {
+        font-size: 10px;
+    }
+
+    section h2 {
+        font-size: 2em;
+    }
+}
