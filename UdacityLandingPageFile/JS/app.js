@@ -109,9 +109,9 @@ var optionsSection1 = {
 var observerSection1 = new IntersectionObserver(function(entries, observerSection1){
        entries.forEach(entry => {
               if(entry.isIntersecting){
-                     document.getElementById('menu_section1').classList.add('your-class', 'your-active-class')
+                     document.getElementById('menu_section1').classList.add('your-class')
               } else {
-                     document.getElementById('menu_section1').classList.remove('your-class', 'your-active-class')
+                     document.getElementById('menu_section1').classList.remove('your-class')
               };
        });
 }, optionsSection1);
@@ -128,9 +128,9 @@ var optionsSection2 = {
 var observerSection2 = new IntersectionObserver(function(entries, observerSection2){
        entries.forEach(entry => {
               if(entry.isIntersecting){
-                     document.getElementById('menu_section2').classList.add('your-class', 'your-active-class')
+                     document.getElementById('menu_section2').classList.add('your-class')
               } else {
-                     document.getElementById('menu_section2').classList.remove('your-class', 'your-active-class')
+                     document.getElementById('menu_section2').classList.remove('your-class')
               };
        });
 }, optionsSection2);
@@ -147,9 +147,9 @@ var optionsSection3 = {
 var observerSection3 = new IntersectionObserver(function(entries, observerSection3){
        entries.forEach(entry => {
               if(entry.isIntersecting){
-                     document.getElementById('menu_section3').classList.add('your-class', 'your-active-class')
+                     document.getElementById('menu_section3').classList.add('your-class')
               } else {
-                     document.getElementById('menu_section3').classList.remove('your-class','your-active-class')
+                     document.getElementById('menu_section3').classList.remove('your-class')
               };
        });
 }, optionsSection3);
@@ -166,9 +166,9 @@ var optionsSection4 = {
 var observerSection4 = new IntersectionObserver(function(entries, observerSection4){
        entries.forEach(entry => {
               if(entry.isIntersecting){
-                     document.getElementById('menu_section4').classList.add('your-clas', 'your-active-class')
+                     document.getElementById('menu_section4').classList.add('your-clas')
               } else {
-                     document.getElementById('menu_section4').classList.remove('your-clas', 'your-active-class')
+                     document.getElementById('menu_section4').classList.remove('your-clas')
               };
        });
 }, optionsSection4);
