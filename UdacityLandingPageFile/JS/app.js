@@ -31,7 +31,7 @@ const sectionFour = document.getElementById('section4');
  * Start Helper Functions
  * 
 */
-
+const sections = document.querySelectorAll("section");
 
 
 /**
@@ -41,147 +41,162 @@ const sectionFour = document.getElementById('section4');
 */
 
 // build the nav
-    //Creating About li
-var navBar__about = document.createElement('li');
-navBar__about.className ='navbar__menu menu__link debug';
-navBar__about.setAttribute('href', '#about');
-    //About button text
-var navBar__aboutText = document.createTextNode('About');
-    //Appending text to button
-navBar__about.appendChild(navBar__aboutText);
-    //Add to HTMl
-navBarList.appendChild(navBar__about);
+//     //Creating About li
+// var navBar__about = document.createElement('li');
+// navBar__about.className ='navbar__menu menu__link debug';
+// navBar__about.setAttribute('href', '#about');
+//     //About button text
+// var navBar__aboutText = document.createTextNode('About');
+//     //Appending text to button
+// navBar__about.appendChild(navBar__aboutText);
+//     //Add to HTMl
+// navBarList.appendChild(navBar__about);
 
- //Creating Section 1 li
-var section_1 = document.createElement('li');
-section_1.className ='navbar__menu menu__link debug';
-section_1.setAttribute('href', '#section1');
-     //About button text
-var section_1__aboutText = document.createTextNode('Section 1');
-     //Appending text to button
-section_1.appendChild(section_1__aboutText);
-     //Add to HTMl
-navBarList.appendChild(section_1);
+//  //Creating Section 1 li
+// var section_1 = document.createElement('li');
+// section_1.className ='navbar__menu menu__link debug';
+// section_1.setAttribute('href', '#section1');
+//      //About button text
+// var section_1__aboutText = document.createTextNode('Section 1');
+//      //Appending text to button
+// section_1.appendChild(section_1__aboutText);
+//      //Add to HTMl
+// navBarList.appendChild(section_1);
 
- //Creating Secton 2 li
-var section_2 = document.createElement('li');
-section_2.className ='navbar__menu menu__link debug';
-section_2.setAttribute('href', '#section2');
-      //About button text
-var section_2__aboutText = document.createTextNode('Section 2');
-      //Appending text to button
-section_2.appendChild(section_2__aboutText);
-      //Add to HTMl
-navBarList.appendChild(section_2);
+//  //Creating Secton 2 li
+// var section_2 = document.createElement('li');
+// section_2.className ='navbar__menu menu__link debug';
+// section_2.setAttribute('href', '#section2');
+//       //About button text
+// var section_2__aboutText = document.createTextNode('Section 2');
+//       //Appending text to button
+// section_2.appendChild(section_2__aboutText);
+//       //Add to HTMl
+// navBarList.appendChild(section_2);
 
- //Creating Secton 3 li
-var section_3 = document.createElement('li');
-section_3.className ='navbar__menu menu__link debug';
-section_3.setAttribute('href', '#section3');
-       //About button text
-var section_3__aboutText = document.createTextNode('Section 3');
-       //Appending text to button
-section_3.appendChild(section_3__aboutText);
-       //Add to HTMl
-navBarList.appendChild(section_3);
+//  //Creating Secton 3 li
+// var section_3 = document.createElement('li');
+// section_3.className ='navbar__menu menu__link debug';
+// section_3.setAttribute('href', '#section3');
+//        //About button text
+// var section_3__aboutText = document.createTextNode('Section 3');
+//        //Appending text to button
+// section_3.appendChild(section_3__aboutText);
+//        //Add to HTMl
+// navBarList.appendChild(section_3);
 
- //Creating Secton 4 li
-var section_4 = document.createElement('li');
-section_4.className ='navbar__menu menu__link debug';
-section_4.setAttribute('href', '#section4');
-       //About button text
-var section_4__aboutText = document.createTextNode('Section 4');
-       //Appending text to button
-section_4.appendChild(section_4__aboutText);
-       //Add to HTMl
-navBarList.appendChild(section_4);
+//  //Creating Secton 4 li
+// var section_4 = document.createElement('li');
+// section_4.className ='navbar__menu menu__link debug';
+// section_4.setAttribute('href', '#section4');
+//        //About button text
+// var section_4__aboutText = document.createTextNode('Section 4');
+//        //Appending text to button
+// section_4.appendChild(section_4__aboutText);
+//        //Add to HTMl
+// navBarList.appendChild(section_4);
+
+//For loop to create menu bar 
+const sections = document.querySelectorAll("section"); // This will fetch all the sections and create an array
+sections.forEach(section => {
+    var li = document.createElement('li');
+    li.className ='navbar__menu menu__link debug';
+    li.setAttribute('href', '#' + section.id);
+          //About button text
+    var li_aboutText = document.createTextNode(section); // This you will require to change 
+         //Appending text to button
+    li.appendChild(li_aboutText);
+         //Add to HTMl
+    navBarList.appendChild(li);
+    console.log(sections);
+})
 
 // Add class 'active' to section when near top of viewport
 
 //Section 1 active class
-var mainSectionOne = document.querySelector('#section1');
+var mainSection = document.querySelectorAll('#section');
 
-var optionsSection1 = {
+var optionsSection = {
        threshold: .6,
        rootMargin: '-90px',
 };
 
-var observerSection1 = new IntersectionObserver(function(entries, observerSection1){
+var observerSection = new IntersectionObserver(function(entries, observerSection){
        entries.forEach(entry => {
               if(entry.isIntersecting){
-                     document.getElementById('menu_section1').classList.add('your-class')
+                     document.getElementsByTagName('section').classList.add('your-class')
               } else {
-                     document.getElementById('menu_section1').classList.remove('your-class')
+                     document.getElementsByTagName('section').classList.remove('your-class')
               };
        });
-}, optionsSection1);
+}, optionsSection);
 
-observerSection1.observe(mainSectionOne);
+observerSection1.observe(SectionOne);
 
-//Section 2 active class
-var mainSectionTwo = document.querySelector('#section2');
+// //Section 2 active class
+// var mainSectionTwo = document.querySelector('#section2');
 
-var optionsSection2 = {
-       rootMargin: '-355px',
-};
+// var optionsSection2 = {
+//        rootMargin: '-355px',
+// };
 
-var observerSection2 = new IntersectionObserver(function(entries, observerSection2){
-       entries.forEach(entry => {
-              if(entry.isIntersecting){
-                     document.getElementById('menu_section2').classList.add('your-class')
-              } else {
-                     document.getElementById('menu_section2').classList.remove('your-class')
-              };
-       });
-}, optionsSection2);
+// var observerSection2 = new IntersectionObserver(function(entries, observerSection2){
+//        entries.forEach(entry => {
+//               if(entry.isIntersecting){
+//                      document.getElementById('menu_section2').classList.add('your-class')
+//               } else {
+//                      document.getElementById('menu_section2').classList.remove('your-class')
+//               };
+//        });
+// }, optionsSection2);
 
-observerSection2.observe(mainSectionTwo);
+// observerSection2.observe(mainSectionTwo);
 
-//Section 3 active class
-var mainSectionThree = document.querySelector('#section3');
+// //Section 3 active class
+// var mainSectionThree = document.querySelector('#section3');
 
-var optionsSection3 = {
-       rootMargin: '-355px',
-};
+// var optionsSection3 = {
+//        rootMargin: '-355px',
+// };
 
-var observerSection3 = new IntersectionObserver(function(entries, observerSection3){
-       entries.forEach(entry => {
-              if(entry.isIntersecting){
-                     document.getElementById('menu_section3').classList.add('your-class')
-              } else {
-                     document.getElementById('menu_section3').classList.remove('your-class')
-              };
-       });
-}, optionsSection3);
+// var observerSection3 = new IntersectionObserver(function(entries, observerSection3){
+//        entries.forEach(entry => {
+//               if(entry.isIntersecting){
+//                      document.getElementById('menu_section3').classList.add('your-class')
+//               } else {
+//                      document.getElementById('menu_section3').classList.remove('your-class')
+//               };
+//        });
+// }, optionsSection3);
 
-observerSection3.observe(mainSectionThree);
+// observerSection3.observe(mainSectionThree);
 
-//Section 4 active class
-var mainSectionFour = document.querySelector('#section4');
+// //Section 4 active class
+// var mainSectionFour = document.querySelector('#section4');
 
-var optionsSection4 = {
-       rootMargin: '-355px',
-};
+// var optionsSection4 = {
+//        rootMargin: '-355px',
+// };
 
-var observerSection4 = new IntersectionObserver(function(entries, observerSection4){
-       entries.forEach(entry => {
-              if(entry.isIntersecting){
-                     document.getElementById('menu_section4').classList.add('your-clas')
-              } else {
-                     document.getElementById('menu_section4').classList.remove('your-clas')
-              };
-       });
-}, optionsSection4);
+// var observerSection4 = new IntersectionObserver(function(entries, observerSection4){
+//        entries.forEach(entry => {
+//               if(entry.isIntersecting){
+//                      document.getElementById('menu_section4').classList.add('your-clas')
+//               } else {
+//                      document.getElementById('menu_section4').classList.remove('your-clas')
+//               };
+//        });
+// }, optionsSection4);
 
-observerSection4.observe(mainSectionFour);
+// observerSection4.observe(mainSectionFour);
 
 // Scroll to anchor ID using scrollTO event
 //Adding ID to Secton 1 li element
 document.getElementsByTagName("li")[1].setAttribute("id", "menu_section1");
 // Scroll to section one event
-const clickSection1 = document.getElementById('menu_section1').addEventListener('click', scrollToSectionOne);
+const clickSection1 = document.getElementsByTagNameNS[0].addEventListener('click', scrollToSectionOne);
 
-function scrollToSectionOne(){
+function scrollToSection(){
        sectionOne.scrollIntoView(true);
 };
 
