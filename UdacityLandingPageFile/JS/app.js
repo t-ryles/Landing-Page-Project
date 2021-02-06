@@ -71,9 +71,10 @@ const options = {};
 
 const observer = new IntersectionObserver(function(entries, observer){
        entries.forEach(entry => {
-             if(entry.isIntersecting){
-              entry.target.classList.add('your-active-class')};
-              console.log(entry.target);
+              entry.target.classList.add('your-active-class');
+              if (!entry.isIntersecting){ //If the section is not intersecting ignore code
+                     entry.target.classList.remove('your-active-class');
+              }
              })
 
 }, options);
