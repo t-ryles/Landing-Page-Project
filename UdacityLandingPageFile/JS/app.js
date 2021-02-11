@@ -70,6 +70,9 @@ observerSections.forEach(observerSection => {
 });
 
 //Scroll to anchor ID using scrollTO event
+sections.forEach(section => {
+       section.setAttribute('href', '#' + section.id);
+})
 
 
 /**
@@ -81,16 +84,19 @@ observerSections.forEach(observerSection => {
 // Build menu 
 const listItem = document.querySelectorAll('li');
 
+
 listItem.forEach(function(items){
        items.addEventListener('click', onClick);
+       // var itemId = items.id;
+       // function onClick() {
+       //        document.getElementsByTagName(itemId).classList.add('active-section');
+       //   }
        console.log(items);
 });
 
 function onClick() {
-       if(items.href === sections.id) {
-              scrollTo(true);
-       }
-};// items not defined
+     console.log();
+};
 
 
 // Scroll to section on link click
