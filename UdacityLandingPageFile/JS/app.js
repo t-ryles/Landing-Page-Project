@@ -20,6 +20,8 @@
 const navBarList = document.getElementById('navbar__list');
 
 const sections = document.querySelectorAll("section"); 
+
+const listItem = document.querySelectorAll('li');
 /**
  * End Global Variables
  * Start Helper Functions
@@ -40,9 +42,7 @@ const sections = document.querySelectorAll("section");
 // build the nav
 sections.forEach(section => {
        var li = document.createElement('li');
-       li.className ='navbar__menu menu__link';
-       li.setAttribute('href', '#' + section.id);
-       li.setAttribute('id', 'menu_' + section.id);
+       li.setAttribute('class', `navbar__menu menu__link ${section.id}`);
              //About button text
        var li_aboutText = document.createTextNode(section.id);
             //Appending text to button
@@ -82,37 +82,20 @@ sections.forEach(section => {
 */
 
 // Build menu 
-const listItem = document.querySelectorAll('li');
 
-
-listItem.forEach(function(items){
-       items.addEventListener('click', onClick);
-       // var itemId = items.id;
-       // function onClick() {
-       //        document.getElementsByTagName(itemId).classList.add('active-section');
-       //   }
-       console.log(items);
-});
-
-function onClick() {
-     console.log();
-};
 
 
 // Scroll to section on link click
 
-$(function() {
-       $('a[href*=#]:not([href=#])').click(function() {
-           if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
 
-               var target = $(this.hash);
-               target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-               if (target.length) {
-                   $('html,body').animate({
-                       scrollTop: target.offset().top
-                   }, 1000);
-                   return false;
-               }
-           }
-       });
+listItem.forEach(items => {
+       items.addEventListener('click', onClick);
 });
+
+function onClick (scrollLink) {
+       for (const section of sections){
+         if (scrollLink.classList[2] === section.id) {
+           section.scrollIntoView({behavior: 'smooth'});
+         }
+       }
+     }
