@@ -21,18 +21,12 @@ const navBarList = document.getElementById('navbar__list');
 
 const sections = document.querySelectorAll("section"); 
 
-const listItem = document.querySelectorAll('li');
 /**
  * End Global Variables
  * Start Helper Functions
  * 
 */
 
-
-
-// function liClicked() {
-//        console.log('clicked');
-// };
 /**
  * End Helper Functions
  * Begin Main Functions
@@ -44,12 +38,14 @@ sections.forEach(section => {
        var li = document.createElement('li');
        li.setAttribute('class', `navbar__menu menu__link ${section.id}`);
              //About button text
-       var li_aboutText = document.createTextNode(section.id);
+       var li_aboutText = document.createTextNode(section.dataset.nav);
             //Appending text to button
        li.appendChild(li_aboutText);
             //Add to HTMl
        navBarList.appendChild(li);
-   })
+   });
+
+const listItem = document.querySelectorAll('li');
 
 // Add class 'active' to section when near top of viewport
 var observerSections = document.querySelectorAll('section');
@@ -70,9 +66,7 @@ observerSections.forEach(observerSection => {
 });
 
 //Scroll to anchor ID using scrollTO event
-sections.forEach(section => {
-       section.setAttribute('href', '#' + section.id);
-})
+
 
 
 /**
@@ -85,17 +79,17 @@ sections.forEach(section => {
 
 
 
+
+
 // Scroll to section on link click
-
-
 listItem.forEach(items => {
        items.addEventListener('click', onClick);
 });
 
-function onClick (scrollLink) {
-       for (const section of sections){
-         if (scrollLink.classList[2] === section.id) {
-           section.scrollIntoView({behavior: 'smooth'});
-         }
+function onClick() {
+       let clickedLi = this.classList[2];
+       console.log(clickedLi);
+       if( clickedLi === section.id) {
+              scrollTo(section.id)
        }
-     }
+};
