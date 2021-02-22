@@ -86,10 +86,23 @@ listItem.forEach(items => {
        items.addEventListener('click', onClick);
 });
 
+let sectionToScroll = document.querySelectorAll('section');
+let arrySectionToScroll = Array.from(sectionToScroll);
+
+
+
+//*console.log(arrySectionToScroll);
+
 function onClick() {
-       let clickedLi = this.classList[2];
-       console.log(clickedLi);
-       if( clickedLi === section.id) {
-              scrollTo(section.id)
-       }
+
+       arrySectionToScroll.forEach(element => {
+              let sect = (element.id);
+              //console.log(sect);
+              let clickedLi = this.classList[2];
+              //console.log(clickedLi);
+              if(clickedLi === sect) {
+                     console.log('clicked ' + sect);
+              }
+       })
+
 };
