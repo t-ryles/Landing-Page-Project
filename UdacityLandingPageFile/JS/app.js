@@ -86,23 +86,17 @@ listItem.forEach(items => {
        items.addEventListener('click', onClick);
 });
 
-let sectionToScroll = document.querySelectorAll('section');
-let arrySectionToScroll = Array.from(sectionToScroll);
-
-
-
-//*console.log(arrySectionToScroll);
-
 function onClick() {
+       let clickedLi = this.classList[2];
 
-       arrySectionToScroll.forEach(element => {
-              let sect = (element.id);
-              //console.log(sect);
-              let clickedLi = this.classList[2];
-              //console.log(clickedLi);
-              if(clickedLi === sect) {
-                     console.log('clicked ' + sect);
-              }
-       })
+       const element = document.getElementById(clickedLi);
+       const top = element.getBoundingClientRect().top + window.pageYOffset;
+
+       window.scrollTo({
+              top, // scroll so that the element is at the top of the view
+              behavior: 'smooth' // smooth scroll
+            })
+
 
 };
+
