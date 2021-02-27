@@ -85,6 +85,8 @@ section {
 
 .navbar__menu ul {
     display: flex;
+    align-items: stretch;
+    justify-content: space-evenly;
     padding-left: 0;
     margin: 0;
     text-align: center;
@@ -92,14 +94,13 @@ section {
 
 .navbar__menu li {
     height: 20px;
-    width: 100%;
     font-size: 2.5em;
     font-family: 'Fira Sans', sans-serif;
 }
 
 .navbar__menu .menu__link {
     display: block;
-    padding: 1em;
+    padding: 1em 0;
     font-weight: bold;
     text-decoration: none;
 }
@@ -289,3 +290,18 @@ section.your-active-class .landing__container::after {
         font-size: 2em;
     }
 }
+
+@media (max-width: 400px) {
+    .page__header {
+        font-size: .2em;
+    }
+
+}
+
+@media (max-width: 320px) {
+    li {
+        font-size: 7px;
+        padding: 10px;
+    }
+}
+

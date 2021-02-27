@@ -19,7 +19,7 @@
 */
 const navBarList = document.getElementById('navbar__list');
 
-const sections = document.querySelectorAll("section"); 
+const sections = document.querySelectorAll("section");
 
 /**
  * End Global Variables
@@ -43,12 +43,13 @@ sections.forEach(section => {
        li.appendChild(li_aboutText);
             //Add to HTMl
        navBarList.appendChild(li);
-   });
+});
 
 const listItem = document.querySelectorAll('li');
 
 // Add class 'active' to section when near top of viewport
 var observerSections = document.querySelectorAll('section');
+
 const options = {};
 
 const observer = new IntersectionObserver(function(entries, observer){
@@ -57,8 +58,7 @@ const observer = new IntersectionObserver(function(entries, observer){
               if (!entry.isIntersecting){
                      entry.target.classList.remove('your-active-class');
               }
-             })
-
+       })
 }, options);
 
 observerSections.forEach(observerSection => {
@@ -88,7 +88,6 @@ listItem.forEach(items => {
 
 function onClick() {
        let clickedLi = this.classList[2];
-
        const element = document.getElementById(clickedLi);
        const top = element.getBoundingClientRect().top + window.pageYOffset;
 
@@ -96,7 +95,4 @@ function onClick() {
               top, // scroll so that the element is at the top of the view
               behavior: 'smooth' // smooth scroll
             })
-
-
 };
-
